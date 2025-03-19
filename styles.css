@@ -1,0 +1,115 @@
+:root {
+    --barca-blue: #004D98;
+    --barca-red: #A50044;
+    --gold: #EDBB00;
+    --modern-font: 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    font-family: var(--modern-font);
+    background: linear-gradient(135deg, #f9f9f9 0%, #e8e8e8 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}
+
+.quiz-container {
+    max-width: 800px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    padding: 2rem;
+    margin: 2rem;
+    border: 3px solid var(--barca-blue);
+}
+
+.progress-bar {
+    height: 8px;
+    background: #eee;
+    border-radius: 4px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: var(--barca-red);
+    width: 0;
+    transition: width 0.3s ease, background 0.3s ease;
+}
+
+.question-container {
+    margin: 2rem 0;
+}
+
+.option {
+    padding: 1.2rem;
+    margin: 10px 0;
+    border: 2px solid var(--barca-blue);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,77,152,0.1);
+}
+
+.correct {
+    background: #e8f5e9 !important;
+    border-color: #4CAF50 !important;
+    animation: pulseCorrect 0.6s ease;
+}
+
+.wrong {
+    background: #ffebee !important;
+    border-color: #f44336 !important;
+    animation: pulseWrong 0.6s ease;
+}
+
+@keyframes pulseCorrect {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+@keyframes pulseWrong {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+}
+
+.result {
+    text-align: center;
+    padding: 2rem;
+    background: var(--barca-blue);
+    color: white;
+    border-radius: 15px;
+    margin-top: 2rem;
+}
+
+h1 {
+    color: var(--barca-blue);
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.badge {
+    width: 30px;
+    height: 30px;
+    background: var(--barca-red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
